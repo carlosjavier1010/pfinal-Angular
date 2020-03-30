@@ -1,0 +1,42 @@
+$azul:#003CFF;
+$rojo: #D31E1E;
+$negro: #000000;
+$blanco:#fff;
+$gris-shadow:#888888;
+$teal: #17a2b8;
+.logo{
+    width: 130px;
+    border: 2px solid $rojo;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px 1px $azul;
+}
+.btn-custom{
+    border: 1.5px solid $negro;
+    border-radius: 12px;
+    background-color: $rojo;
+    padding: 0.5%;
+    text-align: center;
+    width: 100%;
+    vertical-align: center;
+    margin: 1%;
+}
+.link-custom{
+    color: $blanco;
+    text-shadow: 1px 1px 5px $negro;
+    font-size: medium;
+    font-family: roboto;
+
+}
+.link-custom:hover{
+    color: $blanco;
+    text-shadow:1px 1px 5px $blanco;
+}
+.nav-border{
+    border: 2px solid $rojo;
+    border-radius: 6px;
+    box-shadow: 10px 10px 8px 3px $gris-shadow;
+}
+.activado{
+  background-color:$negro !important;
+  border: 1.5px solid $rojo;
+}

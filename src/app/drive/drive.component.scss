@@ -1,0 +1,27 @@
+$azul:#003CFF;
+$rojo: #D31E1E;
+$negro: #000000;
+$blanco:#fff;
+$gris-shadow:#888888;
+$teal: #17a2b8;
+.nav-link{
+  background-color: $rojo !important;
+  color: $blanco;
+    text-shadow: 1px 1px 5px $negro;
+    font-size: medium;
+    font-family: roboto;
+}
+.nav-link:hover{
+  background-color: $teal !important;
+  color: $blanco;
+    text-shadow: 1px 1px 5px $negro;
+    font-size: medium;
+    font-family: roboto;
+}
+h1{
+  font-size: 20px !important;
+}
+h2{
+  font-size: 16px !important;
+}
+

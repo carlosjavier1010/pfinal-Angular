@@ -11,6 +11,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { DriveComponent } from './drive/drive.component';
 import { BlogComponent } from './blog/blog.component';
 import { MasPelaoComponent } from './mas-pelao/mas-pelao.component';
+import { CitasComponent } from './citas/citas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { MasPelaoComponent } from './mas-pelao/mas-pelao.component';
     PerfilComponent,
     DriveComponent,
     BlogComponent,
-    MasPelaoComponent
+    MasPelaoComponent,
+    CitasComponent
   ],
   imports: [
     BrowserModule,

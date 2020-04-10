@@ -1,12 +1,10 @@
-$azul:#003CFF;
-$rojo: #D31E1E;
-$bg: #000000E6;
+@use './src/styles';
 .col-maspelao{
-    background-color: $bg;
+    background-color: styles.$bg;
     padding: 1%;
 }
 .text-blanco{
-    color: #fff !important;
+    color: styles.$blanco !important;
 }
 .card-img-top{
   width: 250px;

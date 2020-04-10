@@ -1,4 +1,29 @@
+@use './src/styles';
 .card-img-top{
   width: 250px;
   margin: 0 auto;
+}
+.col-maspelao{
+  background-color: styles.$bg;
+  padding: 1%;
+}
+.col-nombre{
+  background-color: styles.$rojo;
+  padding: 0;
+  text-shadow: 1px 1px 5px styles.$negro;
+    font-size: medium;
+    font-family: roboto;
+    border: 1.5px solid styles.$negro;
+}
+
+.text-blanco{
+  color: styles.$blanco;
+}
+.text-form{
+  color: styles.$teal;
+}
+p{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: larger;
 }

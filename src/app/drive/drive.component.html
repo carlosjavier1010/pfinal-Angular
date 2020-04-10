@@ -14,8 +14,8 @@
 
 <!-- Sistema de Ficheros -->
 <div class="container-fluid">
-<div class="row mt-4">
-  <div class="col-3">
+<div class="row mt-4 justify-content-center">
+  <div class="col-4">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-folder-open">Imagenes</i></a>
       <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-folder-open">Documentos</i></a>
@@ -23,7 +23,14 @@
       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-folder-open">Otros</i></a>
     </div>
   </div>
-  <div class="col-9">
+  <div class="col-8">
+    <div class="row justify-content-center align-items-center">
+      <div class="container-fluid p-0 fixed-bottom col-12" style="background-color: #17A2B8;">
+        <button class="btn btn-info text-center col-6"><a href=""><p class="text-white bg-info"><i class="fa fa-cloud-upload-alt"></i>Subir Archivos</p></a></button>
+        <button class="btn btn-info text-center col-6"><a href=""><p class="text-white bg-info"><i class="fa fa-cloud-download-alt"></i>Descargar todos los archivos</p></a></button>
+      </div>
+    </div>
+
     <div class="tab-content container-fluid" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><i class="fas fa-file-archive">Imagen1.jpg</i></div>
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"><i class="fas fa-file-archive">perfil.pdf</i></div>
@@ -31,23 +38,158 @@
         <i class="fas fa-file-archive">index.html</i>
       </div>
       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-        <div class="container-fluid">
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>perfiles.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>otros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>ficheros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>perfiles.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>otros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>ficheros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>perfiles.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>otros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>ficheros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>perfiles.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>otros.zip</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file-archive"><p>ficheros.zip</p></i></a>
-        <div class="w-100"></div>
-        <a href="" class="mr-4"><i class="fas fa-file text-dark"><p class="text-white bg-dark"><i class="fas fa-plus-square"></i>Nuevo Archivo</p></i></a>
-        <a href="" class="mr-4"><i class="fas fa-file text-dark"><p class="text-white bg-dark"><i class="fas fa-minus-square"></i>Eliminar archivo seleccionado</p></i></a>
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
 
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+              <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+            <button type="button" class="btn btn-primary col-5 col-lg-3 m-1" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-archive">perfiles.zip</i></button>
+
+          </div>
+
+       <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal"><i class="far fa-plus-square"> Descargar</i></button>
+        <button type="button" class="btn btn-danger"><i class="far fa-minus-square"> Eliminar</i></button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </div>

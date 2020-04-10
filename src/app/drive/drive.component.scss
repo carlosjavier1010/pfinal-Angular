@@ -1,20 +1,15 @@
-$azul:#003CFF;
-$rojo: #D31E1E;
-$negro: #000000;
-$blanco:#fff;
-$gris-shadow:#888888;
-$teal: #17a2b8;
+@use './src/styles';
 .nav-link{
-  background-color: $rojo !important;
-  color: $blanco;
-    text-shadow: 1px 1px 5px $negro;
+  background-color: styles.$rojo !important;
+  color: styles.$blanco;
+    text-shadow: 1px 1px 5px styles.$negro;
     font-size: medium;
     font-family: roboto;
 }
 .nav-link:hover{
-  background-color: $teal !important;
-  color: $blanco;
-    text-shadow: 1px 1px 5px $negro;
+  background-color: styles.$teal !important;
+  color: styles.$blanco;
+    text-shadow: 1px 1px 5px styles.$negro;
     font-size: medium;
     font-family: roboto;
 }

@@ -35,3 +35,17 @@
   background-color:styles.$negro !important;
   border: 1.5px solid styles.$rojo;
 }
+.ir-arriba {
+  width: 5%;
+	display:block;
+	background:styles.$teal;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+  right:15px;
+  margin-right: 2%;
+  float: left;
+  z-index: 10000;
+}

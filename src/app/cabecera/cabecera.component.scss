@@ -36,7 +36,7 @@
   border: 1.5px solid styles.$rojo;
 }
 .ir-arriba {
-  width: 5%;
+  width: auto;
 	display:block;
 	background:styles.$teal;
 	font-size:20px;
@@ -47,5 +47,5 @@
   right:15px;
   margin-right: 2%;
   float: left;
-  z-index: 10000;
+  z-index: 90000;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Cita } from './cita';
+import { CitaService } from './cita.service';
 @Component({
   selector: 'app-citas',
   templateUrl: './citas.component.html',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitasComponent implements OnInit {
 
-  constructor() { }
+  citas: Cita[] = [];
+  constructor(private citaService: CitaService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.citaService.getcitas().subscribe(
+      citas => this.citas = citas
+    );
   }
 
 }

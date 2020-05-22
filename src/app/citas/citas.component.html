@@ -1,1 +1,35 @@
-<p>citas works!</p>
+<div class="container-fluid">
+
+  <div class="m-2 text-left">
+    <button class="btn btn-rounded btn-primary" type="button" [routerLink] = "['/citas/form']">Coger Cita</button>
+  </div>
+
+  <div class="card">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">Listado de citas</h5>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">estado</th>
+            <th scope="col">Id Usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of citas">
+            <td>{{ item.id }}</td>
+            <td>{{ item.fecha }}</td>
+            <td>{{ item.estado }}</td>
+            <td>{{ item.user.id }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+  </div>
+</div>

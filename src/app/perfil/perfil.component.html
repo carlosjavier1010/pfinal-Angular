@@ -5,16 +5,16 @@
       <div class="card">
         <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap">
         <div class="card-body col-nombre col-12 align-items-center">
-          <h5 class="card-title text-center col-12 text-blanco align-items-center mt-2">Carlos Javier Alonso Vergara</h5>
+          <h5 class="card-title text-center col-12 text-blanco align-items-center mt-2" >{{usuario.nombre | titlecase}} {{usuario.apellidos | titlecase}}</h5>
         </div>
         <div class="container-fluid">
           <!-- FILA 1 -->
           <div class="row">
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-envelope text-form"> Correo:</i></strong>  tikitacto1234@gmail.com</p>
+              <p class="card-text p-1" ><strong><i class="fas fa-envelope text-form"> Correo:</i></strong>{{usuario.email}}</p>
             </div>
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-map-marker-alt text-form"> Direccion:</i></strong>  Doctor Domingo Gallego B3,1ºD</p>
+              <p class="card-text p-1"><strong><i class="fas fa-map-marker-alt text-form"> Direccion:</i></strong>  {{usuario.direccion | titlecase}}</p>
             </div>
             <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
@@ -23,10 +23,10 @@
           <!-- FILA 2 -->
           <div class="row">
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-mobile-alt text-form"> Movil:</i></strong>  657 01 76 58</p>
+              <p class="card-text p-1"><strong><i class="fas fa-mobile-alt text-form"> Movil:</i></strong>  {{usuario.movil}}</p>
             </div>
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-user-lock text-form"> Registrado:</i></strong>  12/03/2020</p>
+              <p class="card-text p-1"><strong><i class="fas fa-user-lock text-form"> Registrado:</i></strong>  {{usuario.fechaRegistro | date :'fullDate' :'' : 'es_ES' | titlecase}}</p>
             </div>
           </div>
           <!-- FIN FILA 2 -->

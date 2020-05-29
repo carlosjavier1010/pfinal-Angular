@@ -1,11 +1,17 @@
  <!-- Breadcrumps -->
  <div class="container-fluid">
-  <div class="row">
+  <div class="row justify-content-center align-items-center">
 <nav aria-label="breadcrumb" class="col-12">
   <p class="mt-2">Estás en:</p>
  <ol class="breadcrumb">
-   <li class="breadcrumb-item active" aria-current="page"><a routerLink="/inicio"><h1>Inicio</h1></a></li>
+   <li class="breadcrumb-item active col-4" aria-current="page"><a routerLink="/inicio"><h1>Inicio</h1></a></li>
+   <p class="text-center col-5">Hola {{ authService.usuario.nombre + ' ' +authService.usuario.apellidos | titlecase}}</p>
+ <form class="form-block my-lg-0 float-right col-3" *ngIf="authService.isAuthenticated()">
+
+  <a class="nav-link link-custom" routerLink="/citas"><button class="btn btn-info my-2 my-sm-0 link-custom" type="submit" (click)="authService.logout()">Cerrar Sesion</button></a>
+</form>
  </ol>
+
 </nav>
 </div>
 </div>

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Cita } from './cita';
 import { CitaService } from './cita.service';
+import { AuthService } from '../usuarios/auth.service';
+import { Router } from '@angular/router';
+import { Usuario } from '../usuarios/usuario';
+import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-citas',
   templateUrl: './citas.component.html',
@@ -9,12 +14,54 @@ import { CitaService } from './cita.service';
 export class CitasComponent implements OnInit {
 
   citas: Cita[] = [];
-  constructor(private citaService: CitaService) { }
+  usuarioAutenticado: Usuario;
+  constructor(public citaService: CitaService , public authService: AuthService) { }
 
   ngOnInit() {
-    this.citaService.getcitas().subscribe(
+    this.usuarioAutenticado = this.authService.usuario;
+    console.log(this.usuarioAutenticado.id);
+    this.citaService.getcitasByUserId(this.usuarioAutenticado.id).subscribe(
       citas => this.citas = citas
     );
+
+
   }
 
+  delete(cita: Cita){
+    const swalWithBootstrapButtons = swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    swalWithBootstrapButtons.fire({title: 'Are you sure?',
+    text: '¿Seguro que desea eliminar la cita?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#5cb85c',
+    cancelButtonColor: '#d9534f',
+    confirmButtonText: 'Si, eliminar!',
+    cancelButtonText: 'No, cancelar!',
+    buttonsStyling: false,
+    reverseButtons: true,
+    focusConfirm:false,
+    focusCancel:true
+  }).then(result => {
+      if (result.value) {
+
+        this.citaService.delete(cita.id).subscribe(
+          () => {
+            this.citas = this.citas.filter(cli => cli !== cita)
+            swal.fire(
+              'Cita Eliminada!',
+              `Cita seleccionada con id ${cita.id} eliminada con éxito.`,
+              'success'
+            )
+          }
+        )
+
+      }
+    });
+  };
 }

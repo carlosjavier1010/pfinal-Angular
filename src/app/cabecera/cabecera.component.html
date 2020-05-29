@@ -35,6 +35,10 @@
 
         <a class="nav-link link-custom" routerLink="/citas"><button class="btn btn-info my-2 my-sm-0 link-custom" type="submit" (click)="close()">Buscar Citas Disponibles</button></a>
       </form>
+      <!-- <form class="form-block my-2 my-lg-0" *ngIf="authService.isAuthenticated()">
+
+        <a class="nav-link link-custom" routerLink="/citas"><button class="btn btn-info my-2 my-sm-0 link-custom" type="submit" (click)="logout()">Cerrar Sesion</button></a>
+      </form> -->
     </div>
   </nav>
 </div>

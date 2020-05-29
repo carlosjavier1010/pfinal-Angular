@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate, state } from '@angular/animations';
+import { AuthService } from '../usuarios/auth.service';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -21,7 +22,7 @@ import { trigger,style,transition,animate, state } from '@angular/animations';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
 

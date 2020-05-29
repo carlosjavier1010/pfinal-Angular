@@ -7,7 +7,7 @@
   <div class="card">
     <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
     <div class="card-body">
-      <h5 class="card-title">Listado de citas</h5>
+      <h5 class="card-title">Listado de sus citas anteriores</h5>
 
       <table class="table">
         <thead class="thead-dark">
@@ -16,6 +16,7 @@
             <th scope="col">Fecha</th>
             <th scope="col">estado</th>
             <th scope="col">Id Usuario</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
             <td>{{ item.fecha }}</td>
             <td>{{ item.estado }}</td>
             <td>{{ item.user.id }}</td>
+            <td *ngIf="item.estado == 0"><input type="button" class="btn btn-danger" value="Eliminar Cita" (click)="delete(item)"></td>
           </tr>
         </tbody>
       </table>

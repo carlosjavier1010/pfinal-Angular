@@ -20,6 +20,7 @@ import { FormComponent } from './citas/form.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './usuarios/login.component';
 import { UsuarioService } from './usuarios/usuario.service';
+import { AuthService } from './usuarios/auth.service';
 
 registerLocaleData(localeES, 'es');
 
@@ -44,7 +45,7 @@ registerLocaleData(localeES, 'es');
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [CitaService,UsuarioService],
+  providers: [CitaService,UsuarioService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,16 @@
 export class Usuario {
   id: number;
   email: string;
+  direccion: string;
   pass: string;
   verified: boolean;
-  verification_token: string;
+  verificationToken: string;
+  userAdmin: boolean;
   movil: number;
-  fecha_registro: string;
+  fechaRegistro: string;
   nombre: string;
   apellidos: string;
   foto: string;
-  cod_rank: number;
+  codRank: number;
   roles: string[] = [];
 }

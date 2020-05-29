@@ -17,11 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
 import { FormComponent } from './citas/form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './usuarios/login.component';
 import { UsuarioService } from './usuarios/usuario.service';
 import { AuthService } from './usuarios/auth.service';
-
+import { MatStepperModule  } from '@angular/material/stepper';
+import { MatIconModule  } from '@angular/material/icon';
+import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 registerLocaleData(localeES, 'es');
 
 @NgModule({
@@ -43,7 +47,12 @@ registerLocaleData(localeES, 'es');
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatStepperModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [CitaService,UsuarioService,AuthService],
   bootstrap: [AppComponent]

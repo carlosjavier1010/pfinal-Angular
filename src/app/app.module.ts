@@ -26,6 +26,7 @@ import { MatIconModule  } from '@angular/material/icon';
 import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+
 registerLocaleData(localeES, 'es');
 
 @NgModule({
@@ -54,7 +55,7 @@ registerLocaleData(localeES, 'es');
     MatFormFieldModule,
     MatSelectModule
   ],
-  providers: [CitaService,UsuarioService,AuthService],
+  providers: [CitaService, UsuarioService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

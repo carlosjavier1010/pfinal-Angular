@@ -1,44 +1,85 @@
-<div class="card bg-dark text-white">
+<div class="container-fluid">
+<div class="row justify-content-around align-content-around mt-3">
+  <i class="fas fa-cut fa-3x"></i><button class="btn btn-rounded btn-danger" type="button" [routerLink] = "['/citas']"> Volver </button><i class="fas fa-cut fa-3x"></i>
+</div>
+<div class="card bg-dark text-white mt-3">
   <div class="card-header">{{ titulo }}</div>
   <div class="card-body">
+    <form (ngSubmit)="create()" id="formFecha" [formGroup]="formGroup">
+      <mat-vertical-stepper linear>
+        <mat-step label="Seleccione una fecha" completed="true" required>
+          <input
+            type="date"
+            step="1"
+            min="{{ this.fechaMinima }}"
+            max="{{ this.fechaMaxima }}"
+            #valor
+            (change)="selectFecha(valor.value)"
+            [(ngModel)]="fechaSeleccionada"
+            formControlName="fechaC"
+            value="{{ fechaMinima }}"
+          />
+          {{ valor.value }}
+        </mat-step>
 
+        <mat-step label="Seleccione una hora" completed="true" required>
+          <select
+            name="horas"
+            class="form-control col-12"
+            id="exampleFormControlSelect2"
+            [disabled]="valor.value.length == 0"
+            title="Debes seleccionar una hora"
+            [(ngModel)]="this.horaSeleccionada"
+            formControlName="hora"
+            (change)="selectHora()"
+          >
+            <option selected #predefinido (click)="selectHora()"
+              >Seleccione una hora</option
+            >
+            <option *ngFor="let item of horas">
+              <!-- <p *ngIf="item.toString() > this.horaActual"> -->{{ item }}
+              <!-- </p> -->
+            </option>
+            <option
+              value="No hay horas disponibles para la fecha seleccionada"
+              *ngIf="horas.length == 0"
+              >No hay horas disponibles para la fecha seleccionada</option
+            >
+          </select>
 
+          <div>
+            <button mat-button matStepperPrevious class="btn btn-light mt-2">
+              Ir Atras
+            </button>
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-info mt-2 ml-4"
+              [disabled]="formGroup.invalid"
+            >
+              Confirmar
+            </button>
+          </div>
+        </mat-step>
 
-    <form (ngSubmit) = "create()">
-
-
-
-    <mat-vertical-stepper linear>
-      <mat-step label="Seleccione una fecha" completed="true" required>
-        <input type="date" name="fecha" step="1" min="{{this.fechaMinima}}" max="{{this.fechaMaxima}}" name="fecha" #valor (change)="selectFecha(valor.value)" [(ngModel)]="fechaSeleccionada" required>
-          {{valor.value}}
-      </mat-step>
-
-      <mat-step label="Seleccione una hora" completed="true" required>
-        <select name="horas" class="form-control col-4" id="exampleFormControlSelect2" #selecthora [disabled]="valor.value.length == 0" title="Debes seleccionar una hora" required>
-
-          <option selected #predefinido (click)="selectHora(predefinido.value)" >Seleccione una hora</option>
-          <option *ngFor="let item of horas" #valorHora (click)="selectHora(valorHora.value)" ><!-- <p *ngIf="item.toString() > this.horaActual"> -->{{item}}<!-- </p> --></option>
-          <option value="No hay horas disponibles para la fecha seleccionada" *ngIf="horas.length==0">No hay horas disponibles para la fecha seleccionada</option>
-
-        </select>
-        <div>
-          <button mat-button matStepperPrevious class="btn btn-light mt-2">Ir Atras</button>
-          <button mat-button matStepperNext class="btn btn-info mt-2 ml-4">Confirmar</button>
-        </div>
-      </mat-step>
-
-      <mat-step label="Confirme su cita" completed="false">
-        <button class="btn btn-primary" role="button" type="submit">Confirmar Cita</button>
-
-      </mat-step>
-    </mat-vertical-stepper>
-  </form>
+        <mat-step label="Confirme su cita" completed="false">
+          <button
+            class="btn btn-primary"
+            role="button"
+            type="submit"
+            [disabled]="formGroup.invalid"
+          >
+            Confirmar Cita
+          </button>
+        </mat-step>
+      </mat-vertical-stepper>
+    </form>
   </div>
 </div>
-<p *ngIf="valor.value.length != 0 && citas.length!=0">LAS SIGUIENTES HORAS DE LA FECHA SELECCIONADA NO ESTA DISPONIBLE:</p>
-<p *ngFor="let cita of citas">
-  {{cita.fecha}}
+<p *ngIf="valor.value.length != 0 && citas.length != 0">
+  LAS SIGUIENTES HORAS DE LA FECHA SELECCIONADA NO ESTA DISPONIBLE:
 </p>
-
-
+<p *ngFor="let cita of citas">
+  {{ cita.fecha }}
+</p>
+</div>

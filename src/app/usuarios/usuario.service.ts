@@ -33,7 +33,7 @@ export class UsuarioService {
       return true;
     }
     if (e.status == 403) {
-       this.router.navigate(['/inicio']);
+       this.router.navigate(['/citas']);
        Swal.fire('Acceso denegado', `Hola ${this.authService.usuario.nombre} No tienes permisos para accceder a este recurso`,'error');
 
       return true;
@@ -71,6 +71,12 @@ getUsuarioById(id: number): Observable<Usuario> {
 
       return throwError(e);
     }));
+}
+
+setUsuarioById(usuario: Usuario): Observable<Usuario> {
+  console.log(usuario);
+  console.log('Nombre usuario :'+usuario.nombre);
+  return this.http.put<Usuario>(this.urlEndPoint + '/' + usuario.id, usuario, {headers: this.agregarAuthorizationHeader()});
 }
 
 }

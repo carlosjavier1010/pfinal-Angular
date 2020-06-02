@@ -1,11 +1,11 @@
 <!-- CARD 1 -->
 <section class="container-fluid" @enterState>
-  <div class="row justify-content-center align-items-center col-maspelao mt-4">
-    <article class="card-group col-12 col-lg-7">
+  <div class="row justify-content-center align-items-center col-maspelao mt-4" >
+    <article class="card-group col-12 col-lg-7" *ngIf="!formUsuario; else activate;">
       <div class="card">
         <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap">
         <div class="card-body col-nombre col-12 align-items-center">
-          <h5 class="card-title text-center col-12 text-blanco align-items-center mt-2" >{{usuario.nombre | titlecase}} {{usuario.apellidos | titlecase}}</h5>
+          <h5 class="card-title text-center col-12 text-blanco align-items-center mt-2" style="font-size: large;">{{usuario.nombre | titlecase}} {{usuario.apellidos | titlecase}}</h5>
         </div>
         <div class="container-fluid">
           <!-- FILA 1 -->
@@ -59,15 +59,68 @@
 
           <!-- FILA 5 -->
           <div class="row">
-            <button class="btn btn-dark my-2 my-sm-0 link-custom" type="submit"><a href="#" class="link-custom text-blanco"><i class="fas fa-user-edit">Modificar Datos Personales</i></a></button>
+            <button class="btn btn-dark my-2 my-sm-0 link-custom" *ngIf="!formUsuario; else activateGuardar;" (click)="formValidate()"><span class="link-custom text-blanco"><i class="fas fa-user-edit">Modificar Datos Personales</i></span></button>
+            <ng-template #activateGuardar>
+              <button class="btn btn-dark my-2 my-sm-0 link-custom" (click)="formValidate()" ><span class="link-custom text-blanco"><i class="fas fa-user-edit">Guardar</i></span></button>
+            </ng-template>
 
-            <button class="btn btn-danger my-2 my-sm-0 link-custom" type="submit"><a href="#" class="link-custom text-blanco"><i class="fab fa-hackerrank">Ver el Ranking</i></a></button>
+            <button class="btn btn-danger my-2 my-sm-0 link-custom" *ngIf="!formUsuario; else activateVolver;"><span class="link-custom text-blanco"><i class="fab fa-hackerrank">Ver el Ranking</i></span></button>
+            <ng-template #activateVolver>
+            <button class="btn btn-danger my-2 my-sm-0 link-custom" (click)="formValidate()"><span class="link-custom text-blanco"><i class="fas fa-chevron-circle-left">Volver</i></span></button>
+            </ng-template>
 
           </div>
           <!-- FIN FILA 5 -->
         </div>
       </div>
     </article>
+    <!-- FORMULARIO -->
+    <ng-template #activate>
+    <article class="card-group col-12 col-lg-7">
+      <div class="card">
+        <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap">
+        <div class="card-body col-nombre col-12 align-items-center form-group row justify-content-center" style="margin: 0 auto;">
+            <label for="nombre" class="col-sm-2 col-form-label text-white">
+              Nombre:
+            </label>
+            <input class="card-title text-center col-10 text-dark align-items-center mt-2 form-control" style="font-size: large;" name="nombre" [(ngModel)] = "usuario.nombre" value="{{usuario.nombre}}">
+            <label for="apellidos" class="col-sm-2 col-form-label text-white">
+              Apellidos:
+            </label>
+            <input class="card-title text-center col-10 text-dark align-items-center mt-2 form-control" style="font-size: large;" name="apellidos" [(ngModel)] = "usuario.apellidos" value="{{usuario.apellidos}}">
+
+        </div>
+        <div class="container-fluid">
+          <!-- FILA 1 -->
+          <div class="row">
+            <div class="col-12 col-md-6 border bg-light">
+              <p class="card-text p-1" ><strong><i class="fas fa-envelope text-form"> Correo:</i></strong><input type="text"  name="email" [(ngModel)]="usuario.email" class="form-control"></p>
+            </div>
+            <div class="col-12 col-md-6 border bg-light">
+              <p class="card-text p-1"><strong><i class="fas fa-map-marker-alt text-form"> Direccion:</i></strong><input type="text"  name="direccion" [(ngModel)]="usuario.direccion" class="form-control"></p>
+            </div>
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          </div>
+          <!-- FIN FILA1 -->
+
+          <!-- FILA 2 -->
+          <div class="row">
+            <div class="col-12 border bg-light">
+              <p class="card-text p-1"><strong><i class="fas fa-mobile-alt text-form"> Movil:</i></strong><input type="number"  name="movil" [(ngModel)]="usuario.movil" class="form-control"></p>
+            </div>
+          </div>
+          <!-- FIN FILA 2 -->
+
+          <!-- FILA 5 -->
+          <div class="row justify-content-around">
+           <button class="btn btn-dark my-2 my-sm-0 link-custom" (click)="formGuardar()" ><span class="link-custom text-blanco"><i class="fas fa-user-edit">Guardar</i></span></button>
+            <button class="btn btn-danger my-2 my-sm-0 link-custom" (click)="formVolver()"><span class="link-custom text-blanco"><i class="fas fa-chevron-circle-left">Volver</i></span></button>
+          </div>
+          <!-- FIN FILA 5 -->
+        </div>
+      </div>
+    </article>
+  </ng-template>
   </div>
 </section>
 <!-- FIN CARD 1 -->

@@ -39,7 +39,7 @@ export class CitaService {
           // formatDate(cita.fecha,'dd-MM-yyyy | hh:mm','en-US')
 
           const datePipe = new DatePipe('es');
-          cita.fecha = datePipe.transform(cita.fecha, 'EEEE, d MMMM y | HH:mm');
+          cita.fecha = datePipe.transform(cita.fecha, 'EEEE d\' de \' MMMM \' del \' y \' a las \' HH:mm');
           console.log('citas:::: ',cita);
           return cita;
         });

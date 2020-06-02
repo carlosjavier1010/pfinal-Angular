@@ -15,14 +15,23 @@ export class CitasComponent implements OnInit {
 
   citas: Cita[] = [];
   usuarioAutenticado: Usuario;
+  citaPendiente: boolean;
   constructor(public citaService: CitaService , public authService: AuthService) { }
 
   ngOnInit() {
+    this.citaPendiente = false;
+
     this.usuarioAutenticado = this.authService.usuario;
     console.log(this.usuarioAutenticado.id);
     this.citaService.getcitasByUserId(this.usuarioAutenticado.id).subscribe(
-      citas => this.citas = citas
-    );
+      (citas) => {
+        this.citas = citas;
+        this.citas.forEach(element => {
+          if (element.estado == 1) {
+            this.citaPendiente = true;
+          }
+        });
+      });
 
 
   }
@@ -35,13 +44,13 @@ export class CitasComponent implements OnInit {
       },
       buttonsStyling: false
     })
-    swalWithBootstrapButtons.fire({title: 'Are you sure?',
-    text: '¿Seguro que desea eliminar la cita?',
+    swalWithBootstrapButtons.fire({title: 'AVISO',
+    text: '¿Seguro que desea anular la cita?',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#5cb85c',
     cancelButtonColor: '#d9534f',
-    confirmButtonText: 'Si, eliminar!',
+    confirmButtonText: 'Si, anular!',
     cancelButtonText: 'No, cancelar!',
     buttonsStyling: false,
     reverseButtons: true,
@@ -57,11 +66,21 @@ export class CitasComponent implements OnInit {
               'Cita Eliminada!',
               `Cita seleccionada con id ${cita.id} eliminada con éxito.`,
               'success'
-            )
+            );
+            this.citaPendiente = false;
           }
+
         )
 
       }
     });
   };
+
+  alertCitaPendiente() :void {
+    swal.fire('Cita Pendiente','Aún tienes una cita pendiente, para coger una nueva cita, por favor, anule la que ya tienes.','info');
+    console.log('click');
+  }
+
+
+
 }

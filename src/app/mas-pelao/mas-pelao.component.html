@@ -1,30 +1,35 @@
-<table class="table table-striped" @enterState>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+
+  <div class="card" style="margin: 0 auto;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h3 class="card-title">Ranking </h3>
+
+<table class="table table-sm table-striped"  @enterState>
   <thead class="thead-dark">
     <tr>
       <th scope="col">Pos.</th>
-      <th scope="col">Usuario</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Veces que se ha pelado</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Nº Pelados</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Elemento1</td>
-      <td>Elemento1</td>
-      <td>@Elemento1</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Elemento2</td>
-      <td>Elemento2</td>
-      <td>@Elemento2</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Elemento3</td>
-      <td>Elemento3</td>
-      <td>@Elemento3</td>
-    </tr>
+
+      <tr *ngFor="let item of masPelaos;let i=index">
+        <th scope="row">{{(i+1)}}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellidos}}</td>
+        <td>{{item.cantidad}}</td>
+      </tr>
+
+
   </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>

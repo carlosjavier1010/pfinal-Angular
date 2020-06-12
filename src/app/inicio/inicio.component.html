@@ -9,6 +9,9 @@
   </ol>
   </nav>
 </div>
+<div *ngFor="let ro of usuario.roles" class="col-12 m-2">
+  <button class="btn btn-danger link-custom col-12" routerLink="/admin" *ngIf="ro.nombre == 'ROLE_ADMIN' ">Panel de Administracion {{authService.usuario.nombre | titlecase}} <a href="#" class="link-custom text-blanco"><i class="fas fa-user-tag"></i></a></button>
+ </div>
  </div>
 
  <!-- Breadcrumps -->
@@ -22,29 +25,33 @@
 
  <!-- EL MAS PELAO -->
  <section class="container-fluid" @enterState>
-  <div class="row justify-content-center align-items-center col-maspelao">
+  <div class="row justify-content-center align-items-center col-maspelao" >
       <!-- CARD 1 -->
-      <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;">
-        <img src="./assets/images/avatar.jpg" class="card-img-top img-fluid" alt="...">
+      <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;" *ngFor="let item of topTres">
+        <img *ngIf="item.foto;else noFoto;" src="http://localhost:8080/api/clientes/img/{{item.foto}}" class="card-img-top img-fluid mt-1" alt="...">
+        <ng-template #noFoto>
+          <img  src="./assets/images/avatar.jpg" class="card-img-top img-thumbnail mt-1" alt="...">
+        </ng-template>
+
         <div class="card-body">
           <h2 class="card-title">El más pelao</h2>
           <p class="card-text">Ahora mismo este hombre <strong>lidera el primer puesto en nuestro ranking</strong> de <strong>los más pelaos!.</strong></p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Premio:</strong> Se sortea un pelado gratis cada 3 meses para quién lidere el ranking.</li>
-          <li class="list-group-item"><strong>Nombre:</strong></li>
-          <li class="list-group-item"><strong>Apellidos:</strong></li>
+          <li class="list-group-item"><strong>Nombre:</strong>{{item.nombre | titlecase}}</li>
+          <li class="list-group-item"><strong>Apellidos:</strong>{{item.apellidos | titlecase}}</li>
         </ul>
         <div class="card-body">
           <button class="btn btn-dark my-2 my-sm-0 link-custom" type="submit"><a href="#" class="link-custom text-blanco"><i class="fas fa-user-tag">Ver Perfil</i></a></button>
 
-          <button class="btn btn-info my-2 my-sm-0 link-custom m-2" type="submit"><a href="#" class="link-custom text-blanco">Ver el Ranking</a></button>
+          <button class="btn btn-info my-2 my-sm-0 link-custom m-2" type="submit" routerLink="/mas-pelao"><a class="link-custom text-blanco">Ver el Ranking</a></button>
         </div>
       </article>
       <!-- FIN CARD 1 -->
 
       <!-- CARD 2 -->
-      <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;">
+      <!-- <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;">
         <img src="./assets/images/avatar.jpg" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h2 class="card-title">El más pelao</h2>
@@ -60,11 +67,11 @@
 
           <button class="btn btn-info my-2 my-sm-0 link-custom m-2" type="submit"><a href="#" class="link-custom text-blanco">Ver el Ranking</a></button>
         </div>
-      </article>
+      </article> -->
       <!-- FIN CARD 2 -->
 
       <!-- CARD 3 -->
-      <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;">
+      <!-- <article class="card justify-content-center col-12 col-md-3 m-1" style="width: 18rem;">
         <img src="./assets/images/avatar.jpg" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h2 class="card-title">El más pelao</h2>
@@ -80,7 +87,7 @@
 
           <button class="btn btn-info my-2 my-sm-0 link-custom m-2" type="submit"><a href="#" class="link-custom text-blanco">Ver el Ranking</a></button>
         </div>
-      </article>
+      </article> -->
       <!-- FIN CARD 3 -->
 
     </div>

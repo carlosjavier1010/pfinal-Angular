@@ -1,0 +1,132 @@
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modificacion de datos del usuario {{usuarioMod.nombre}}</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center">
+              <img class="img-fluid" *ngIf="usuarioMod.foto" src="http://localhost:8080/api/clientes/img/{{usuarioMod.foto}}" alt="Card image cap">
+
+            </div>
+
+
+           <article class="card-group col-12">
+            <div class="card">
+          <div class="card-body col-nombre col-12 align-items-center form-group row justify-content-center" style="margin: 0 auto;">
+            <label for="nombre" class="col-sm-4 col-form-label text-white">
+              Nombre:
+            </label>
+            <input class="card-title text-center col-10 text-dark align-items-center mt-2 form-control" style="font-size: large;" name="nombre" [(ngModel)] = "usuarioMod.nombre" value="{{usuarioMod.nombre}}">
+            <label for="apellidos" class="col-sm-4 col-form-label text-white">
+              Apellidos:
+            </label>
+            <input class="card-title text-center col-10 text-dark align-items-center mt-2 form-control" style="font-size: large;" name="apellidos" [(ngModel)] = "usuarioMod.apellidos" value="{{usuarioMod.apellidos}}">
+
+        </div>
+        <div class="container-fluid">
+          <!-- FILA 1 -->
+          <div class="row">
+            <div class="col-12 border bg-light">
+              <p class="card-text p-1" ><strong><i class="fas fa-envelope text-form"> Correo:</i></strong><input type="text"  name="email" [(ngModel)]="usuarioMod.email" class="form-control"></p>
+            </div>
+            <div class="col-12 border bg-light">
+              <p class="card-text p-1"><strong><i class="fas fa-map-marker-alt text-form"> Direccion:</i></strong><input type="text"  name="direccion" [(ngModel)]="usuarioMod.direccion" class="form-control"></p>
+            </div>
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          </div>
+          <!-- FIN FILA1 -->
+
+          <!-- FILA 2 -->
+          <div class="row">
+            <div class="col-12 border bg-light">
+              <p class="card-text p-1"><strong><i class="fas fa-mobile-alt text-form"> Movil:</i></strong><input type="number"  name="movil" [(ngModel)]="usuarioMod.movil" class="form-control"></p>
+            </div>
+          </div>
+          <!-- FIN FILA 2 -->
+
+
+        </div>
+      </div>
+    </article>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="modificarUsuario()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Gestion de Usuarios">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+
+      <div class="card" style="margin: 0 auto;">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+          <h2 class="card-title">Usuarios </h2>
+
+
+
+
+    <table class="table table-sm table-striped table-responsive" >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">seleccione usuario a modificar</th>
+          <th scope="col">Eliminar</th>
+          <th scope="col">Desactivar Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+
+          <tr *ngFor="let item of usuariosGest;let i=index">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellidos}}</td>
+            <td>
+              <button class="btn btn-dark my-2 my-sm-0 link-custom" (click)="selectUsuarioMod(item.id)" data-toggle="modal" data-target="#exampleModal"><span class="link-custom text-blanco"><i class="fas fa-user-edit">Modificar</i></span></button>
+            </td>
+            <td>
+              <button class="btn btn-danger my-2 my-sm-0 link-custom"><span class="link-custom text-blanco" (click)="eliminarUsuario(item.id)"><i class="fas fa-user-minus">Eliminar</i></span></button>
+            </td>
+            <td>
+              <button class="btn btn-danger my-2 my-sm-0 link-custom" (click)="desactivarUsuario(item.id)" *ngIf="item.verified;else activar;"><span class="link-custom text-blanco"><i class="fas fa-user-minus">Desactivar</i></span></button>
+              <ng-template #activar>
+                <button class="btn btn-danger my-2 my-sm-0 link-custom" (click)="activarUsuario(item.id)"><span class="link-custom text-blanco"><i class="fas fa-user-plus">Activar</i></span></button>
+
+              </ng-template>
+
+            </td>
+          </tr>
+
+      </tbody>
+    </table>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Gestion de Citas">
+
+  </mat-tab>
+  <mat-tab label="Gestion de Blog">
+
+  </mat-tab>
+  <mat-tab label="Gestion de Bonos / Productos">
+
+  </mat-tab>
+
+
+</mat-tab-group>

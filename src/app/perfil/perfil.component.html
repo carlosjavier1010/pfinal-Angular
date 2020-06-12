@@ -1,13 +1,13 @@
 <!-- CARD 1 -->
 <section class="container-fluid" @enterState>
   <div class="row justify-content-center align-items-center col-maspelao mt-4" >
-    <article class="card-group col-12 col-lg-7" *ngIf="!formUsuario; else activate;">
+    <article class="card-group col-12 col-lg-7" *ngIf="!formUsuario && this.usuario; else activate;">
       <div class="card">
-        <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap">
+        <img class="card-img-top" *ngIf="usuario.foto" src="http://localhost:8080/api/clientes/img/{{usuario.foto}}" alt="Card image cap">
         <div class="card-body col-nombre col-12 align-items-center">
           <h5 class="card-title text-center col-12 text-blanco align-items-center mt-2" style="font-size: large;">{{usuario.nombre | titlecase}} {{usuario.apellidos | titlecase}}</h5>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" *ngIf="this.usuario">
           <!-- FILA 1 -->
           <div class="row">
             <div class="col-12 col-md-6 border bg-light">
@@ -35,10 +35,10 @@
           <!-- FILA 3 -->
           <div class="row">
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-cut text-form"> Te has pelado:</i></strong>  3 veces</p>
+              <p class="card-text p-1"><strong><i class="fas fa-cut text-form"> Te has pelado:</i></strong>  {{usuario.cantidad}} veces</p>
             </div>
             <div class="col-12 col-md-6 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-money-check text-form"> Bonos:</i></strong>  2 pelados</p>
+              <p class="card-text p-1" ><strong><i class="fas fa-money-check text-form"> Bonos:</i></strong> <span class="badge badge-warning">Proximamente</span></p>
             </div>
           </div>
           <!-- FIN FILA 3 -->
@@ -46,13 +46,13 @@
           <!-- FILA 4 -->
           <div class="row">
             <div class="col-12 col-md-4 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-hdd text-form"> Espacio disponible de almacenamiento:</i></strong>  900 MB</p>
+              <p class="card-text p-1"><strong><i class="fas fa-hdd text-form"> Espacio disponible de almacenamiento:</i></strong> <span class="badge badge-warning">Proximamente</span></p>
             </div>
             <div class="col-12 col-md-4 border bg-light">
-              <p class="card-text p-1"><strong><i class="fas fa-hdd text-form"> Espacio ocupado de almacenamiento:</i></strong>  100 MB</p>
+              <p class="card-text p-1"><strong><i class="fas fa-hdd text-form"> Espacio ocupado de almacenamiento:</i></strong>  <span class="badge badge-warning">Proximamente</span></p>
             </div>
             <div class="col-12 col-md-4 border bg-light">
-              <p class="card-text p-1"><strong><i class="fab fa-hackerrank text-form"> Posicion Ranking:</i></strong>  3</p>
+              <p class="card-text p-1"><strong><i class="fab fa-hackerrank text-form"> Posicion Ranking:</i></strong><span class="badge badge-warning">Proximamente</span></p>
             </div>
           </div>
           <!-- FIN FILA 4 -->
@@ -76,9 +76,32 @@
     </article>
     <!-- FORMULARIO -->
     <ng-template #activate>
+
     <article class="card-group col-12 col-lg-7">
       <div class="card">
-        <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap">
+        <!-- <img class="card-img-top" src="./assets/images/avatar.jpg" alt="Card image cap"> -->
+        <!-- Subir Foto -->
+        <form enctype="multipart/form-data">
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input (change)="seleccionarFoto($event)" type="file" class="custom-file-input" id="inputGroupFile04">
+            <label class="custom-file-label" for="inputGroupFile04">Seleccionar Foto</label>
+          </div>
+          <div class="input-group-append">
+            <button (click)="subirFoto()" [disabled]="!fotoSeleccionada" class="btn btn-success" type="submit">Subir Foto</button>
+          </div>
+        </div>
+
+        <div *ngIf="progreso > 0" class="progress" style="height: 40px;">
+          <div class="progress-bar-animated progress-bar-striped bg-info" role="progressbar" [ngStyle]="{width:progreso+'%'}" attr.aria-valuenow="{{progreso}}" aria-valuemin="0" aria-valuemax="100">
+            <p class="text-center text-blanco">{{progreso}}%</p>
+          </div>
+        </div>
+
+
+      </form>
+        <!-- Fin Subir Foto -->
+
         <div class="card-body col-nombre col-12 align-items-center form-group row justify-content-center" style="margin: 0 auto;">
             <label for="nombre" class="col-sm-2 col-form-label text-white">
               Nombre:
@@ -120,6 +143,7 @@
         </div>
       </div>
     </article>
+
   </ng-template>
   </div>
 </section>

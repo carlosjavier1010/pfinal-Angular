@@ -26,6 +26,9 @@ import { MatIconModule  } from '@angular/material/icon';
 import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import { RegistroComponent } from './usuarios/registro/registro.component';
+import { AdminComponent } from './usuarios/admin/admin.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -41,7 +44,9 @@ registerLocaleData(localeES, 'es');
     MasPelaoComponent,
     CitasComponent,
     FormComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ registerLocaleData(localeES, 'es');
     MatIconModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [CitaService, UsuarioService, AuthService],
   bootstrap: [AppComponent]

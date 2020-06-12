@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate, state } from '@angular/animations';
+import { UsuarioService } from '../usuarios/usuario.service';
+import { Usuario } from '../usuarios/usuario';
 @Component({
   selector: 'app-mas-pelao',
   templateUrl: './mas-pelao.component.html',
@@ -21,9 +23,24 @@ import { trigger,style,transition,animate, state } from '@angular/animations';
 })
 export class MasPelaoComponent implements OnInit {
 
-  constructor() { }
+  masPelaos: Usuario[];
+  miarray: number[];
+  constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.cargarMasPelaosListado();
+
+  }
+
+
+  cargarMasPelaosListado(): void {
+    this.usuarioService.getUsuariosMasPelaosListado().subscribe((usuario) => {
+
+    this.masPelaos = usuario as Usuario[];
+
+      //let usuarioo = JSON.stringify(this.usuario);
+
+     });
   }
 
 }

@@ -22,9 +22,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/blog" (click)="close()">Blog</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="estilos.php" (click)="close()">Bonos</a>
+            <a class="dropdown-item"  (click)="close()">Bonos<span class="badge badge-warning"> Proximamente</span></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/drive" (click)="close()">Mis Archivos</a>
+            <a class="dropdown-item"  (click)="close()">Mis Archivos<span class="badge badge-warning"> Proximamente</span></a>
           </div>
         </li>
         <li class="nav-item btn-custom">
@@ -35,6 +35,14 @@
 
         <a class="nav-link link-custom" routerLink="/citas"><button class="btn btn-info my-2 my-sm-0 link-custom" type="submit" (click)="close()">Buscar Citas Disponibles</button></a>
       </form>
+
+      <form class="form-inline my-2 my-lg-0" *ngFor="let item of roleUsuarioConectado">
+
+        <a class="nav-link link-custom" *ngIf="item.nombre == 'ROLE_ADMIN'" ><button class="btn btn-info my-2 my-sm-0 link-custom"  (click)="close()"  >Panel admin</button></a>
+      </form>
+
+
+
       <!-- <form class="form-block my-2 my-lg-0" *ngIf="authService.isAuthenticated()">
 
         <a class="nav-link link-custom" routerLink="/citas"><button class="btn btn-info my-2 my-sm-0 link-custom" type="submit" (click)="logout()">Cerrar Sesion</button></a>
@@ -43,5 +51,9 @@
   </nav>
 </div>
 </div>
+
 <span class="ir-arriba  text-center justify-content-center"><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+
   <!-- FIN DEL NAVBAR -->
+
+

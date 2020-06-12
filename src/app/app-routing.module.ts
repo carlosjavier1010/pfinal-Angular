@@ -10,6 +10,8 @@ import { MasPelaoComponent } from './mas-pelao/mas-pelao.component';
 import { CitasComponent } from './citas/citas.component';
 import { FormComponent } from './citas/form.component';
 import { LoginComponent } from './usuarios/login.component';
+import { RegistroComponent } from './usuarios/registro/registro.component';
+import { AdminComponent } from './usuarios/admin/admin.component';
 
 const routes: Routes = [
 {path: '', redirectTo: '/login', pathMatch: 'full'}, // Componente predeterminado a cargar
@@ -20,6 +22,8 @@ const routes: Routes = [
 {path: 'citas', component: CitasComponent},
 {path: 'citas/form', component: FormComponent},
 {path: 'login', component: LoginComponent},
+{path: 'registro', component: RegistroComponent},
+{path: 'admin', component: AdminComponent},
 {path: '**', component: InicioComponent} // Componente por defecto en caso de error 404
 ];
 

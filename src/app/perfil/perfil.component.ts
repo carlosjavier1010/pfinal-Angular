@@ -82,11 +82,11 @@ export class PerfilComponent implements OnInit {
   guardarPerfil(): void {
     this.usuario.roles = null;
     this.usuarioService.setUsuarioById(this.usuario as Usuario).subscribe(
-      (usuario) => {
+      response => {
         this.authService.logout();
         swal.fire(
           'Por favor, vuelva a iniciar sesion ',
-          `datos del usuario ${usuario.nombre} actualizados correctamente.`,
+          `datos del usuario ${response.nombre} actualizados correctamente.`,
           'success'
         );
      });

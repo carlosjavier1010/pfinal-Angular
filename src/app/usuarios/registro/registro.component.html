@@ -9,6 +9,7 @@
 
 </head>
 <body>
+
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card" style="height: 500px;">
@@ -21,48 +22,48 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form [formGroup]="formGroup" (ngSubmit)="registro()">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input [(ngModel)]="usuario.email" type="text" class="form-control" placeholder="email" id="email" name="email" autofocus>
+						<input formControlName="email" [class.is-invalid] = "formGroup.get('email').invalid && formGroup.get('email').touched" [(ngModel)]="usuario.email"  type="text" class="form-control" placeholder="email" id="email" autofocus pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input  [(ngModel)]="usuario.pass" type="password" class="form-control" placeholder="password" id="password" name="password" autocomplete="on">
+						<input  [(ngModel)]="usuario.pass" type="password" class="form-control" placeholder="password" id="password" autocomplete="on" [ngModelOptions]="{standalone: true}">
           </div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><i class="fas fa-user-tag"></i></span>
 						</div>
-						<input  [(ngModel)]="usuario.nombre" type="text" class="form-control" placeholder="nombre" id="nombre" name="nombre" autocomplete="on">
+            <input [(ngModel)]="usuario.nombre" type="text" class="form-control" placeholder="nombre" id="nombre"  autocomplete="on" [ngModelOptions]="{standalone: true}">
           </div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><i class="fas fa-user-tag"></i></span>
 						</div>
-						<input  [(ngModel)]="usuario.apellidos" type="text" class="form-control" placeholder="apellidos" id="apellidos" name="apellidos" autocomplete="on">
+						<input  [(ngModel)]="usuario.apellidos" type="text" class="form-control" placeholder="apellidos" id="apellidos"  autocomplete="on" [ngModelOptions]="{standalone: true}">
           </div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
 						</div>
-						<input  [(ngModel)]="usuario.movil" type="text" class="form-control" placeholder="movil" id="movil" name="movil" autocomplete="on">
+						<input formControlName="movil" [class.is-invalid] = "formGroup.get('movil').invalid && formGroup.get('movil').touched"  [(ngModel)]="usuario.movil" type="text" class="form-control" placeholder="movil" id="movil"  autocomplete="on" >
           </div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
 						</div>
-						<input  [(ngModel)]="usuario.direccion" type="text" class="form-control" placeholder="direccion" id="direccion" name="direccion" autocomplete="on">
+						<input  [(ngModel)]="usuario.direccion" type="text" class="form-control" placeholder="direccion" id="direccion"  autocomplete="on" [ngModelOptions]="{standalone: true}">
           </div>
 
 
 					<div class="form-group">
-						<input (click)="registro()" type="submit" value="Registrarse" class="btn float-right login_btn">
+						<input type="submit" value="Registrarse" class="btn float-right login_btn" [disabled]="formGroup.invalid">
 					</div>
 				</form>
 			</div>

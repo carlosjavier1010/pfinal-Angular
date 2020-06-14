@@ -51,7 +51,6 @@ export class FormComponent implements OnInit {
   horasNoDisponibles: String[];
   isLinear = false;
   firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
   isEditable = false;
   fechaMinima: string;
   fechaMaxima: string;

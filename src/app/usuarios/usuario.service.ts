@@ -135,12 +135,20 @@ getUsuarioById(id: number): Observable<Usuario> {
 setUsuarioById(usuario: Usuario): Observable<Usuario> {
   console.log(usuario);
   console.log('Nombre usuario :'+usuario.nombre);
-  return this.http.put<Usuario>(this.urlEndPoint + '/' + usuario.id, usuario, {headers: this.agregarAuthorizationHeader()});
+  return this.http.put<Usuario>(this.urlEndPoint + '/' + usuario.id, usuario, {headers: this.agregarAuthorizationHeader()}).pipe(
+    map( (response: any) => response.usuario as Usuario),
+    catchError(e => {
+
+      console.error(e.error.mensaje);
+      Swal.fire(e.error.mensaje, e.error, 'error');
+      return throwError(e);
+    })
+  );
 }
 
 CreateUsuario(usuario: Usuario): Observable<Usuario> {
   console.log(usuario);
-  console.log('Nombre usuario :'+usuario.nombre);
+  //console.log('Nombre usuario :'+usuario.nombre);
   return this.http.post<Usuario>(this.urlEndPoint, usuario, {headers: this.agregarAuthorizationHeader()}).pipe(
     map( (response: any) => response.usuario as Usuario),
     catchError(e => {

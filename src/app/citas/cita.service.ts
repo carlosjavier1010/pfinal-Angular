@@ -14,7 +14,7 @@ import { AuthService } from '../usuarios/auth.service';
 })
 export class CitaService {
 
-  urlBase = 'http://localhost:8080/api/';
+  urlBase = 'https://peluqueria-jdomi.herokuapp.com/api/';
 
   public urlEndPoint: string = this.urlBase + 'citas';
 
